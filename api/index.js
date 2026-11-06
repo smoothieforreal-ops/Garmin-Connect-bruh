@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     // 3. Send data to Gemini (using a substring to prevent token limit crashes)
     const prompt = `Analyze this Garmin training data: ${JSON.stringify(data).substring(0, 15000)}`;
     const aiRes = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.5-flash-lite',
       contents: prompt,
     });
 
